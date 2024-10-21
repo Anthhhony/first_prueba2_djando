@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="TListadoRegistro">LISTADO DE REGISTROS</div>
+
+    {% if registro %}
+
+    <table>
+        <thead>
+            <tr>
+                <th>NOMBRE</th>
+                <th>EDAD</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for dato in registro %}
+            <tr>
+                <td>{{dato.nombre}}</td>
+                <td>{{dato.edad}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <div><h1>NO HAY REGISTROS</h1></div>
+    {% endif %}
+    <a href="http://127.0.0.1:8000/agregar"><button>AGREGAR</button></a>
+
+</body>
+</html>
